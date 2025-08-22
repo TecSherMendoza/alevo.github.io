@@ -1,0 +1,307 @@
+:root {
+    --naranja: #f39c12;
+    --azul: #2980b9;
+    --blanco: #ffffff;
+    --gris-claro: #f4f4f4;
+    --gris-oscuro: #333;
+    --texto: #555;
+    --header-height: 80px; /* Variable para la altura del header */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Asegura el scroll suave que ya hacía el JS */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--texto);
+    background-color: var(--blanco);
+}
+
+section {
+    /* Padding para que el título no quede bajo el header fijo al hacer scroll */
+    padding-top: var(--header-height);
+    padding-bottom: 4rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.container-fluid {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+h1, h2, h3 {
+    color: var(--azul);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Header y Navegación */
+header {
+    background: var(--blanco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    height: var(--header-height);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    height: 100%;
+}
+
+nav .logo {
+    display: flex;          /* coloca logo + texto en fila */
+    align-items: center;   
+    gap: 0.5rem;            /* espacio entre logo e “ALEVO.” */
+    color: var(--naranja);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav .logo img {
+    width: 90px;   /* ajusta según el tamaño de tu logo */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--azul);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--naranja);
+}
+
+/* Hero Section */
+.hero {
+    background-image: linear-gradient(rgba(41, 128, 185, 0.7), rgba(41, 128, 185, 0.7)), url('https://via.placeholder.com/1920x1080.png?text=Fondo+Servicio+Técnico');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--blanco);
+    padding-top: 0; /* El hero no necesita el padding superior */
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--blanco);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--naranja);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #e67e22;
+}
+
+/* Sección Nosotros */
+.nosotros-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.mision-vision h3 {
+    border-bottom: 2px solid var(--naranja);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.valores ul {
+    list-style: none;
+}
+
+.valores ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.valores ul li::before {
+    content: '✓';
+    color: var(--naranja);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Productos y Servicios */
+.bg-light {
+    background-color: var(--gris-claro);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--blanco);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 1rem 0;
+}
+
+.text-center {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.servicio-item img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.aire_acondicionado img {
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    transition-property: all;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.servicio-item p {
+    font-weight: bold;
+    color: var(--azul);
+}
+
+/* Mercado */
+.bg-dark {
+    background-color: var(--azul);
+}
+
+.text-white {
+    color: var(--blanco);
+}
+
+.bg-dark h2 {
+    color: var(--blanco);
+}
+
+/* Clientes */
+.logos-clientes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centra las imágenes horizontalmente */
+    align-items: center;
+    gap: 2rem; /* espacio entre imágenes */
+}
+
+.logos-clientes img {
+    width: 200px;  /* ajusta tamaño según necesites */
+    height: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.logos-clientes img:hover {
+    opacity: 1;
+}
+
+
+
+/* Footer */
+footer {
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Animaciones y Responsive */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+    nav ul {
+        display: none; /* Simplificado para el ejemplo, se puede hacer un menú hamburguesa con JS */
+    }
+    .nosotros-content {
+        grid-template-columns: 1fr;
+    }
+}
